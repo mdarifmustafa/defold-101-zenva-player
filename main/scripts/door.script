@@ -1,0 +1,5 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash("init_message") then
+		print("Received Message is:", message.text, " and score is:", message.score)
+	end
+end
