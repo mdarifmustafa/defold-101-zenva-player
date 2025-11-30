@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /game/game_controller.collectionc
 
 [script]
 shared_state = 1
@@ -8,6 +8,7 @@ shared_state = 1
 width = 960
 height = 640
 high_dpi = 1
+update_frequency = 60
 
 [android]
 input_method = HiddenInputField
@@ -16,10 +17,14 @@ input_method = HiddenInputField
 scale_mode = stretch
 
 [project]
-title = Defold Game Intro
+title = Wild Run
 dependencies = 
+version = 1.1
 
 [graphics]
 default_texture_min_filter = nearest
 default_texture_mag_filter = nearest
+
+[physics]
+use_fixed_timestep = 1
 

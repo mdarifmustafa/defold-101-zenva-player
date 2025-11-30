@@ -1,0 +1,34 @@
+name: "level1"
+instances {
+  id: "player"
+  prototype: "/game/player/player.go"
+  position {
+    x: 69.0
+    y: 304.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "level"
+  data: "components {\n"
+  "  id: \"level1_tilemap\"\n"
+  "  component: \"/game/levels/level1_tilemap.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/game/levels/level1_tilemap.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: -107.0
+    y: 4.0
+  }
+}
