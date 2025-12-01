@@ -7,6 +7,128 @@ instances {
     y: 304.0
   }
 }
+instances {
+  id: "enemy"
+  prototype: "/game/entities/enemy.go"
+  position {
+    x: 253.0
+    y: 300.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "move_direction"
+      value: "0.0, 1.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
+}
+instances {
+  id: "enemy1"
+  prototype: "/game/entities/enemy.go"
+  position {
+    x: 315.0
+    y: 357.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "move_direction"
+      value: "1.0, 0.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "is_bot"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "enemy2"
+  prototype: "/game/entities/enemy.go"
+  position {
+    x: 561.0
+    y: 340.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "move_direction"
+      value: "1.0, 0.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "is_bot"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "enemy3"
+  prototype: "/game/entities/enemy.go"
+  position {
+    x: 515.0
+    y: 331.0
+  }
+  component_properties {
+    id: "enemy"
+    properties {
+      id: "move_direction"
+      value: "0.0, 1.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
+}
+instances {
+  id: "coin"
+  prototype: "/game/entities/coin.go"
+  position {
+    x: 109.0
+    y: 302.0
+  }
+}
+instances {
+  id: "coin1"
+  prototype: "/game/entities/coin.go"
+  position {
+    x: 141.0
+    y: 320.0
+  }
+}
+instances {
+  id: "coin2"
+  prototype: "/game/entities/coin.go"
+  position {
+    x: 223.0
+    y: 320.0
+  }
+}
+instances {
+  id: "coin3"
+  prototype: "/game/entities/coin.go"
+  position {
+    x: 838.0
+    y: 375.0
+  }
+}
+instances {
+  id: "coin4"
+  prototype: "/game/entities/coin.go"
+  position {
+    x: 992.0
+    y: 328.0
+  }
+}
+instances {
+  id: "end_flag"
+  prototype: "/game/entities/end_flag.go"
+  position {
+    x: 1149.0
+    y: 265.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "level"

@@ -2,6 +2,10 @@ components {
   id: "player"
   component: "/game/player/player.script"
 }
+components {
+  id: "player_hud"
+  component: "/game/player/player_hud.gui"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"
@@ -50,5 +54,23 @@ embedded_components {
   "auto_aspect_ratio: 1\n"
   "orthographic_projection: 1\n"
   "orthographic_zoom: 1.5\n"
+  ""
+}
+embedded_components {
+  id: "sound_jump"
+  type: "sound"
+  data: "sound: \"/assets/audio/jump.ogg\"\n"
+  ""
+}
+embedded_components {
+  id: "sound_coin"
+  type: "sound"
+  data: "sound: \"/assets/audio/coin.ogg\"\n"
+  ""
+}
+embedded_components {
+  id: "sound_die"
+  type: "sound"
+  data: "sound: \"/assets/audio/game-die.ogg\"\n"
   ""
 }

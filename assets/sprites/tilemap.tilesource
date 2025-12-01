@@ -918,7 +918,7 @@ animations {
   fps: 4
 }
 animations {
-  id: "flag"
+  id: "end_flag"
   start_tile: 112
   end_tile: 113
   playback: PLAYBACK_LOOP_FORWARD

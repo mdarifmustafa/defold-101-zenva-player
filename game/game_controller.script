@@ -27,8 +27,8 @@ function init(self)
 	self.reloading_level = false
 	
 	msg.post(".", "acquire_input_focus")
-
-	load_level(self, "level1")
+	-- print("game_controller url", msg.url())
+	load_level(self, "menu")
 end
 
 function on_message(self, message_id, message, sender)
@@ -42,7 +42,7 @@ function on_message(self, message_id, message, sender)
 		msg.post(sender, "enable")
 	elseif message_id == hash("proxy_unloaded") then
 		if self.reloading_level then
-			msg.post(self.current_load, "load")
+			msg.post(self.current_level, "load")
 		end
 	end
 end

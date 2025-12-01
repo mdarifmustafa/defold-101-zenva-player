@@ -14,6 +14,7 @@ local JUMP_ANIM = hash("player_jump")
 
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
 local GROUND_LAYER = hash("ground")
+local INCREASE_SCORE = hash("increase_score")
 
 function init(self)
 	-- post messages
@@ -80,6 +81,17 @@ function fixed_update(self, dt)
 	-- reset state variables
 	self.correction = vmath.vector3()
 	self.ground_contact = false
+
+	-- -- if the player falls from hills
+	-- if self.velocity.y < (-MAX_FALL_SPEED + 75) then
+	-- 	msg.post("game_controller:/gc#game_controller", "reload_level")
+	-- end
+
+	-- check if we have fallen of the map
+	if pos.y < -5 then
+		sound.play("#sound_die")
+		msg.post("game_controller:/gc#game_controller", "reload_level")
+	end
 end
 
 -- local function dump(o, indent)
@@ -130,6 +142,15 @@ function on_message(self, message_id, message, sender)
 			-- print("message is:", dump(message))
 			handle_obstacle_contact(self, message.normal, message.distance)
 		end
+	elseif message_id == INCREASE_SCORE then
+		-- update score value
+		self.score = self.score + message.amount
+		
+		-- update gui
+		msg.post("#player_hud", "update_score_text", { score = self.score })
+		
+		-- play sound effect
+		sound.play("#sound_coin")
 	end
 end
 
@@ -147,6 +168,8 @@ local function jump (self)
 
 	self.velocity.y = JUMP_SPEED
 	self.ground_contact = false
+
+	sound.play("#sound_jump")
 end
 
 function on_input(self, action_id, action)

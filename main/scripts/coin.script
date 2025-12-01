@@ -1,9 +1,0 @@
-function on_message(self, message_id, message, sender)
-	if message_id == hash("trigger_response") then
-		if message.enter then
-			print("collect coin")
-			msg.post("player#player", "collect_coin")
-			go.delete()
-		end
-	end	
-end
